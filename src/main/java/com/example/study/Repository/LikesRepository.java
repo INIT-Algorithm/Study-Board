@@ -1,5 +1,6 @@
 package com.example.study.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,4 +16,7 @@ public interface LikesRepository extends JpaRepository<Likes, Long> {
 	Optional<Object> findByUserAndBoard(User user, Board board);
 	//좋아요 삭제
 	void deleteByUserAndBoard(User user, Board board);
+
+	//마이페이지 추가
+	List<Likes> findByUser(User user);
 }
